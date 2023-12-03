@@ -13,9 +13,8 @@ public class CardDeliveryFormTest {
 
     @Test
     void shouldSendForm() {
-        Configuration.headless = true;
-        Configuration.holdBrowserOpen = true;
-
+        // командой gradlew test -Dselenide.headless=true запускать в IDEA тесты
+        
         String date = LocalDate.now().plusDays(5).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         open("http://localhost:9999");
         $("[data-test-id='city'] input").setValue("Новосибирск");
